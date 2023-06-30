@@ -13,6 +13,7 @@ Ethereum Analysis
 {% block content %}
     <div class="content">
         <h1>Ethereum</h1>
+        <img src="{{ url_for('static', filename='img/eth.jpg') }}" class="logo img-thumbnail" alt="Ethereum Logo">
         <form action="{{ url_for('ethereum_page') }}" method="POST" class="form">
             <select name="time_frame">
                 <option name="daily" value="daily">Daily</option>

@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Exchange</title>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">Bitcoin to USD Converter</h1>
+    <form method="POST" action="/exchange" class="mt-4">
+        <div class="mb-3">
+            <label for="bitcoin_amount" class="form-label">Enter the number of Bitcoin:</label>
+            <input type="number" step="any" class="form-control" name="bitcoin_amount" id="bitcoin_amount" required min="0">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Convert</button>
+    </form>
+    {% if exchanged_amount %}
+    <div class="mt-4">
+        <h2>Converted Amount:</h2>
+        <p>{{ bitcoin_amount }} Bitcoin is equal to <b>${{ exchanged_amount }}</b></p>
+    </div>
+    {% endif %}
+{% endblock %}

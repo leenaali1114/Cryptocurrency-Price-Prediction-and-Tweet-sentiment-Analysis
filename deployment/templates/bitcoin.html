@@ -10,8 +10,32 @@ Bitcoin Analysis
 {% endblock %}
 
 {% block content %}
+<style>
+    #bit_logo {
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .logo {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    h1 {
+        margin-top: 30px;
+    }
+    #btc_p {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+</style>
     <div class="content">
         <h1>Bitcoin</h1>
+        <img src="{{ url_for('static', filename='img/bitcoin_logo.png') }}" class="logo img-thumbnail" alt="Bitcoin Logo">
+        
+        <p id = "btc_p">Price: <b>{{ bitcoin_price }}</b></p>
         <form action="{{ url_for('bitcoin_page') }}" method="POST" class="form">
             <select name="time_frame">
                 <option name="daily" value="daily">Daily</option>

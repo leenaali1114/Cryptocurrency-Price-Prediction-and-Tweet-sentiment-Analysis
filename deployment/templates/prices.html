@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Prices</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row align-items-center mb-4 mt-4">
+      <div class="col-9">
+          <h1 class="display-4">Prices</h1>
+      </div>
+      <div class="col-3">
+          <input type="text" id="searchInput" class="form-control" placeholder="Search coin by name">
+      </div>
+    </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Market Cap</th>
+            <th>Volume (24h)</th>
+            <th>Circulating Supply</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for price in prices %}
+          <tr>
+            <td>{{ price.name }}</td>
+            <td>{{ price.price }}</td>
+            <td>{{ price.market_cap }}</td>
+            <td>{{ price.volume_24h }}</td>
+            <td>{{ price.supply }}</td>
+            <td>{{ price.timestamp }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/search.js') }}"></script>
+
+{% endblock %}
