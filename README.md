@@ -24,7 +24,4 @@ We tuned them using the acf and pacf (Autocorrelation and partial autocorrelatio
 
 For the sentiment analysis part we made use of SklearnClassifier() module of nltk to train MultinomialNB, BernoulliNB, LogisticRegression, SVC, LinearSVC, SGDClassifier and pickled all of these. Then we made a vote classifier which takes all these classifiers and predicts using all of them and then returns the mode of all their outputs. Now we use tweepy library to stream real time tweets from twitter about any particular crypto and then predict them.
 
-# Contributors:
-Nihal Srivastava (https://github.com/Nihal-Srivastava05)  
-Varun Kamath (https://github.com/VarunK1505)  
-Ronit Naik (https://github.com/RonitNaik9)  
+
